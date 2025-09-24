@@ -1,0 +1,44 @@
+Melhore o design do site “Plataforma de Mentorias — Protótipo de Cadastro” para torná-lo mais moderno e visualmente atraente, mantendo a funcionalidade principal (cadastro de usuário, mentor/mentorado) e a responsividade. O design deve ser limpo, profissional e com foco em usabilidade. Aplique as melhorias nas seguintes áreas:
+
+1. **Cores e Paleta**
+   - Use uma paleta de cores modernas e agradáveis aos olhos, como tons pastéis ou cores neutras com destaque (por exemplo, azul claro, verde, cinza ou laranja).
+   - As cores devem ser harmônicas, com contrastes suficientes entre texto e fundo para garantir boa legibilidade.
+   - Adicione um toque de cor nos botões e links, mantendo o fundo neutro para não sobrecarregar visualmente.
+
+2. **Tipografia**
+   - Use fontes modernas e legíveis, como *Roboto*, *Open Sans* ou *Poppins*.
+   - Tamanhos de fonte devem ser adequados para hierarquia clara, com títulos maiores e textos de corpo bem legíveis.
+   - O uso de negrito e itálico deve ser moderado, aplicando-os apenas para destaques importantes (como botões ou campos destacados).
+
+3. **Botões e Inputs**
+   - Torne os botões mais chamativos, com bordas arredondadas e animações suaves ao passar o mouse sobre eles (hover effect).
+   - Os campos de input devem ser mais sofisticados, com bordas suaves e ícones pequenos (como o de “olho” para visualizar senha).
+   - Aplique um leve sombreamento ou transição para botões e inputs para dar a sensação de profundidade.
+
+4. **Layout**
+   - Crie um layout **centrado e simétrico**, com margens adequadas para dar espaço entre os elementos.
+   - Utilize um **design responsivo** com *media queries* para garantir boa visualização em dispositivos móveis e desktops.
+   - Inclua um **fundo leve e suave**, como uma cor de fundo clara ou um padrão sutil (sem exageros).
+
+5. **Ícones e Imagens**
+   - Use ícones modernos e minimalistas (por exemplo, fontes como Font Awesome ou Feather).
+   - Se necessário, inclua imagens representativas do tema (mentores, estudantes, aprendizagem) de forma suave e que complementem o design.
+
+6. **Animações e Transições**
+   - Adicione **transições suaves** nas interações, como no foco dos inputs e no hover dos botões.
+   - Insira animações discretas, como uma leve transição no carregamento das páginas ou ao preencher o formulário.
+
+7. **Acessibilidade**
+   - Garanta que os elementos interativos sejam acessíveis com foco visível (em inputs e botões).
+   - Use contrastes adequados e implemente `aria-labels` nos campos para facilitar a navegação para deficientes visuais.
+
+8. **Cabeçalho e Rodapé**
+   - O cabeçalho deve ter um logo simples, talvez com o nome da plataforma estilizado.
+   - O rodapé deve ter links rápidos para as páginas principais e informações de copyright.
+
+### Objetivo
+Tornar o site visualmente atraente e fácil de navegar, enquanto mantém uma experiência agradável e profissional para o usuário. O design deve ser condizente com uma plataforma de mentorias online, transmitindo confiança e simplicidade.
+
+**Instruções para entrega**
+- Atualize o HTML e CSS para refletir essas mudanças de design.
+- Certifique-se de manter a responsividade no layout (dispositivos móveis, tablets e desktop).

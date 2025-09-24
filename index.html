@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Mentorias — Protótipo de Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h1>Plataforma de Mentorias</h1>
+            </div>
+            <p class="subtitle">Protótipo de Cadastro</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Bem-vindo ao Protótipo</h2>
+            <p>Este é um protótipo de cadastro para uma plataforma de mentorias, onde você pode se registrar como Mentor ou Mentorado para conectar conhecimento e oportunidades.</p>
+            
+            <div class="cta-section">
+                <a href="cadastro.html" class="btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Criar conta
+                </a>
+            </div>
+            
+            <div class="stats">
+                <p><a href="#" id="user-counter" class="stats-link">
+                    <i class="fa-solid fa-users"></i>
+                    Total de usuários cadastrados
+                </a></p>
+                <span id="user-count">0</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Plataforma de Mentorias | Versão 1.0</p>
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="cadastro.html">Cadastro</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateUserCount() {
+            const users = JSON.parse(localStorage.getItem('mentorias:usuarios') || '[]');
+            document.getElementById('user-count').textContent = users.length;
+        }
+        
+        document.addEventListener('DOMContentLoaded', updateUserCount);
+        document.getElementById('user-counter').addEventListener('click', function(e) {
+            e.preventDefault();
+            updateUserCount();
+            alert(`Total de usuários cadastrados: ${document.getElementById('user-count').textContent}`);
+        });
+    </script>
+</body>
+</html>

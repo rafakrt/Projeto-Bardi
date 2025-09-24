@@ -1,0 +1,101 @@
+Crie um site estático e responsivo chamado “Plataforma de Mentorias — Protótipo de Cadastro”, focado SOMENTE na funcionalidade de cadastro de usuário (mentor/mentorado) exigida por um mini-projeto SCRUM universitário. Não inclua comentários no código.
+
+Objetivo
+- Entregar um protótipo funcional mínimo de cadastro de usuário, com opção de perfil Mentor ou Mentorado, armazenando os dados localmente, suficiente para demonstração em aula.
+- O restante do produto é mockado: nada de backend real.
+
+Stack
+- HTML5, CSS3, JavaScript puro (sem frameworks).
+- Armazenamento: localStorage.
+- Fonte do sistema, sem bibliotecas externas obrigatórias.
+
+Estrutura de pastas/arquivos
+- /index.html
+- /cadastro.html
+- /sucesso.html
+- /css/styles.css
+- /js/cadastro.js
+- /README.md
+
+Requisitos de UX/UI gerais
+- Design simples, limpo e responsivo (mobile-first).
+- Paleta neutra, tipografia legível, botões e inputs grandes em mobile.
+- Estados de foco visíveis e hierarquia clara de títulos.
+- Sem comentários no código.
+
+Páginas e regras
+
+1) index.html
+- Cabeçalho com título do projeto.
+- Texto curto explicando que é um protótipo de cadastro para uma plataforma de mentorias.
+- Botão “Criar conta” que leva para /cadastro.html.
+- Rodapé com versão do protótipo e data.
+
+2) cadastro.html
+- Título: “Criar conta”.
+- Formulário com campos obrigatórios:
+  - Nome completo (input text)
+  - E-mail (input email)
+  - Senha (input password, mínimo 6 caracteres)
+  - Tipo de perfil (radio: Mentor | Mentorado) — default: Mentorado
+  - Campo condicional:
+    - Se Mentor: “Área de conhecimento” (select com opções: Tecnologia, Negócios, Design, Dados, Carreira, Outro)
+    - Se Mentorado: “Interesses” (select com opções: Primeiro emprego, Transição de carreira, Programação, UX/UI, Dados, Entrevistas)
+- Validações:
+  - Todos os campos obrigatórios devem ser preenchidos.
+  - E-mail deve ter formato válido.
+  - Senha com no mínimo 6 caracteres.
+  - Exibir mensagens de erro inline e impedir submit quando inválido.
+- Ação no submit:
+  - Salvar o usuário no localStorage com o seguinte modelo:
+    {
+      id: string uuid v4 (gerado em JS),
+      nome: string,
+      email: string,
+      senha: string (em texto simples mesmo, por ser protótipo),
+      tipo: "mentor" | "mentorado",
+      areaConhecimento: string | null,
+      interesses: string | null,
+      criadoEm: ISOString
+    }
+  - Chave de armazenamento: "mentorias:usuarios"
+  - Após salvar, redirecionar para /sucesso.html com querystring ?email=<email> para feedback.
+
+3) sucesso.html
+- Mensagem: “Cadastro concluído com sucesso!”
+- Exibir o e-mail obtido da querystring.
+- Botões:
+  - “Criar outro cadastro” → /cadastro.html
+  - “Voltar ao início” → /index.html
+
+Funcionalidades adicionais mínimas
+- Em /cadastro.html, adicionar abaixo do formulário uma seção “Pré-visualização” que exibe em tempo real os dados digitados (nome, tipo e o valor do campo condicional).
+- Em /index.html, adicionar um link “Total de usuários cadastrados” que exibe o número atual lido de localStorage.
+- Nenhum dado deve vazar para rede. Tudo local.
+
+Acessibilidade
+- Usar labels associados a inputs, aria-live para mensagens de erro e semântica HTML adequada.
+- Contraste suficiente entre texto e fundo.
+
+Testes manuais (README)
+- Instruções no README.md:
+  - Como rodar no Replit (servir como site estático).
+  - Passo a passo para testar:
+    1) Abrir /index.html
+    2) Clicar em “Criar conta”
+    3) Preencher formulário como Mentor (com “Área de conhecimento”) e enviar
+    4) Ver página de sucesso e o e-mail exibido
+    5) Voltar ao início e verificar contagem de usuários
+    6) Repetir como Mentorado (com “Interesses”)
+  - Como limpar os dados: instruir a limpar localStorage da chave "mentorias:usuarios".
+
+Critérios de aceite
+- Layout responsivo e sem comentários no código.
+- Validações funcionando e mensagens de erro visíveis.
+- Salvamento correto no localStorage com o modelo definido.
+- Redirecionamento para /sucesso.html exibindo e-mail cadastrado.
+- Contador de usuários atualizado em /index.html.
+- README.md com instruções claras.
+
+Entrega
+- Projeto rodando no Replit com as páginas e funcionalidades acima.

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta - Plataforma de Mentorias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar ao início
+            </a>
+            <div class="logo">
+                <i class="fa-solid fa-user-plus"></i>
+                <h1>Criar conta</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="cadastro-form" novalidate>
+                <div class="field-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <span class="error-message" id="nome-error" aria-live="polite"></span>
+                </div>
+
+                <div class="field-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error" aria-live="polite"></span>
+                </div>
+
+                <div class="field-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required minlength="6">
+                    <span class="error-message" id="senha-error" aria-live="polite"></span>
+                </div>
+
+                <div class="field-group">
+                    <fieldset>
+                        <legend>Tipo de perfil</legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="tipo" value="mentorado" checked>
+                                Mentorado
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="tipo" value="mentor">
+                                Mentor
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="field-group" id="campo-condicional">
+                    <label for="interesses">Interesses</label>
+                    <select id="interesses" name="interesses" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Primeiro emprego">Primeiro emprego</option>
+                        <option value="Transição de carreira">Transição de carreira</option>
+                        <option value="Programação">Programação</option>
+                        <option value="UX/UI">UX/UI</option>
+                        <option value="Dados">Dados</option>
+                        <option value="Entrevistas">Entrevistas</option>
+                    </select>
+                    <span class="error-message" id="campo-condicional-error" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <i class="fa-solid fa-check"></i>
+                    Criar conta
+                </button>
+            </form>
+
+            <div class="preview-section">
+                <h3>
+                    <i class="fa-solid fa-eye"></i>
+                    Pré-visualização
+                </h3>
+                <div id="preview-content">
+                    <p><strong>Nome:</strong> <span id="preview-nome">-</span></p>
+                    <p><strong>Tipo:</strong> <span id="preview-tipo">Mentorado</span></p>
+                    <p><strong>Campo específico:</strong> <span id="preview-campo">-</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>
